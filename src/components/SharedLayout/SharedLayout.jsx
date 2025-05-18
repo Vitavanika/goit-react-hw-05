@@ -13,7 +13,7 @@ const SharedLayout = () => {
         <Outlet />
       </main>
       <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} Кінопошук.</p>
+        <p>© {new Date().getFullYear()} Vitavanika. Кінопошук.</p>
       </footer>
       <Toaster position="top-right" reverseOrder={false} 
         toastOptions={{
