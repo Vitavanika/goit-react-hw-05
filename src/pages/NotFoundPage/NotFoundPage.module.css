@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; 
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 6rem; 
+  font-weight: bold;
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 1.8rem;
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+.suggestion {
+  font-size: 1rem;
+  color: #00695c;
+  margin-bottom: 30px;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: white;
+  background-color: #26a69a;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.homeLink:hover {
+  background-color: #00897b;
+}

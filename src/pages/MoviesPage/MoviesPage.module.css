@@ -1,0 +1,16 @@
+.moviesPage {
+  padding: 20px;
+}
+
+.error {
+  color: #c62828;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.noResults {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #004d40;
+}

@@ -1,0 +1,22 @@
+.homePage {
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00695c;
+  font-size: 2rem;
+}
+
+.error {
+  color: #c62828;
+  text-align: center;
+}
+
+.noResults {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #004d40;
+}

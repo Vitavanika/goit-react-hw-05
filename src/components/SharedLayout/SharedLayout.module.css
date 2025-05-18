@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 15px; 
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #4db6ac;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 77, 64, 0.2);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #b2dfdb;
+  border-top: 1px solid #80cbc4;
+  margin-top: auto; 
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  color: #004d40;
+}
