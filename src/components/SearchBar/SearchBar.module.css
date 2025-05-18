@@ -26,7 +26,8 @@
 .searchInput:focus {
   outline: none;
   border-color: #26a69a;
-  box-shadow: 0 0 0 2px rgba(38, 166, 154, 0.3);
+  box-shadow: 0 0 5px rgba(38, 166, 154, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .searchButton {

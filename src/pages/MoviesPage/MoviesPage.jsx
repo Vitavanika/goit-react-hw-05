@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { searchMovies } from '../../api/tmdbAPI';
 import MovieList from '../../components/MovieList/MovieList';
@@ -14,39 +14,38 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
 
-  useEffect(() => {
+  const fetchSearchedMovies = useCallback(async () => {
     if (!query) {
       setMovies([]);
       return;
     }
-
-    const fetchSearchedMovies = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const data = await searchMovies(query);
-        if (data.results.length === 0) {
-          toast.error('За вашим запитом нічого не знайдено. Спробуйте інший запит.');
-          setMovies([]);
-        } else {
-          setMovies(data.results);
-        }
-      } catch (err) {
-        setError(err.message);
-        toast.error(`Помилка пошуку фільмів: ${err.message}`);
-      } finally {
-        setIsLoading(false);
+    setIsLoading(true);
+    setError(null);
+    try {
+      const data = await searchMovies(query);
+      setMovies(data.results.length > 0 ? data.results : []);
+      if (data.results.length === 0) {
+        toast.error(
+          "За вашим запитом нічого не знайдено. Спробуйте інший запит."
+        );
       }
-    };
+    } catch (err) {
+      setError(err.message);
+      toast.error(`Помилка пошуку фільмів: ${err.message}`);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [query]);
 
+  useEffect(() => {
     fetchSearchedMovies();
-  }, [query]); 
+  }, [fetchSearchedMovies]);
 
   const handleSearchSubmit = searchQuery => {
     if (searchQuery.trim() === '') {
       toast.error('Будь ласка, введіть пошуковий запит.');
-      setSearchParams({}); 
-      setMovies([]); 
+      setSearchParams({});
+      setMovies([]);
       return;
     }
     setSearchParams({ query: searchQuery });
